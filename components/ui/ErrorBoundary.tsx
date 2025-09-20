@@ -85,3 +85,4 @@ export function useErrorHandler() {
     // You can add error reporting service here
   }
 }
+

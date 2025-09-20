@@ -7,6 +7,12 @@ const nextConfig = {
   env: {
     _next_intl_trailing_slash: 'never'
   },
+  // GitHub Pages configuration
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'dist',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/jharkhand-tourism' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/jharkhand-tourism' : '',
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
@@ -19,8 +25,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  // Enable static optimization
-  output: 'standalone',
   
   // Bundle optimization
   webpack: (config, { dev, isServer }) => {

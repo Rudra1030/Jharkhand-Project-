@@ -46,3 +46,4 @@ export function SectionLoading({ className }: { className?: string }) {
     </div>
   )
 }
+
