@@ -92,13 +92,25 @@ export function BookingForm() {
   }
 
   const handleNestedInputChange = (parent: string, field: string, value: any) => {
-    setFormData(prev => ({
-      ...prev,
-      [parent]: {
-        ...prev[parent as keyof typeof prev],
-        [field]: value
+    setFormData(prev => {
+      const currentValue = prev[parent as keyof typeof prev]
+
+      // Type guard to ensure the value is an object before spreading
+      if (currentValue && typeof currentValue === 'object' && !Array.isArray(currentValue)) {
+        return {
+          ...prev,
+          [parent]: {
+            ...currentValue,
+            [field]: value
+          }
+        }
       }
-    }))
+
+      // If the parent is not an object, we can't use nested input change
+      // This should not happen with the current form structure, but provides safety
+      console.warn(`Attempted to use nested input change on non-object property: ${parent}`)
+      return prev
+    })
   }
 
   const calculateTotalPrice = () => {

@@ -7,12 +7,8 @@ const nextConfig = {
   env: {
     _next_intl_trailing_slash: 'never'
   },
-  // GitHub Pages configuration
-  output: 'export',
+  // Vercel configuration
   trailingSlash: true,
-  distDir: 'dist',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/jharkhand-tourism' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/jharkhand-tourism' : '',
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
     formats: ['image/webp', 'image/avif'],
