@@ -1,0 +1,8 @@
+{
+  "/[locale]/blog/page": "app/[locale]/blog/page.js",
+  "/[locale]/explore/page": "app/[locale]/explore/page.js",
+  "/[locale]/destinations/page": "app/[locale]/destinations/page.js",
+  "/[locale]/blog/[id]/page": "app/[locale]/blog/[id]/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/destinations/[id]/page": "app/[locale]/destinations/[id]/page.js"
+}
